@@ -9,7 +9,7 @@ verbose_option=" --verbose --debug"
 # set -x; 
 
 export PYTHONUNBUFFERED=1
-export PYTHONWARNINGS="ignore"
+#export PYTHONWARNINGS="ignore"
 
 taskName="ft-4"
 
@@ -53,7 +53,7 @@ mel_bands="128"
 
 # By setting the --fixed-length option, we make sure that all audio files are
 # exactly 5 seconds long. This is achieved by cutting or zero-padding audio files as required.
-fixed_length="5"
+fixed_length="8"
 
 # Parser
 parser="audeep.backend.parsers.esc.ESCParser"
@@ -62,7 +62,7 @@ parser="audeep.backend.parsers.esc.ESCParser"
 # evaluation, we found that different classes have high accuracy if amplitudes below different thresholds are
 # filtered. Our system normalises spectrograms so that the maximum amplitude is 0 dB, and we filter amplitudes below
 # -30 dB, -45 dB, -60 dB and -75 dB.
-clip_below_values="-30 -45" # -60 -75"
+clip_below_values="-60" # -45 -60 -75"
 
 # Base path for spectrogram files. auDeep automatically creates the required directories for us.
 spectrogram_base="${taskName}/input/spectrograms"
@@ -102,8 +102,8 @@ fi
 # Network training:
 # =================
 # Train for 64 epochs, in batches of 64 examples
-num_epochs="32"
-batch_size="32"
+num_epochs="64"
+batch_size="64"
 
 # Use learning rate 0.001 and keep probability 80% (20% dropout).
 learning_rate="0.001"

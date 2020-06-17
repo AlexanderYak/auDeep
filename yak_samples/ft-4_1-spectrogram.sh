@@ -33,7 +33,6 @@ for clip_below_value in ${clip_below_values}; do
         	--window-width ${window_width} \
         	--window-overlap ${window_overlap} \
         	--fixed-length ${fixed_length} \
-        	--center-fixed \
         	--clip-below ${clip_below_value} \
         	--mel-spectrum ${mel_bands} \
         	--parser ${parser}
